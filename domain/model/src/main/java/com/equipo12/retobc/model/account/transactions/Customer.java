@@ -1,15 +1,14 @@
-package com.equipo12.retobc.model.accountrq;
+package com.equipo12.retobc.model.account.transactions;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccountRS {
-   private BalanceRS balances;
-
+@Data
+@Builder(toBuilder = true)
+public class Customer {
+   private String name;
 }
