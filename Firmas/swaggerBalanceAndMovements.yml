@@ -37,7 +37,7 @@ paths:
         content:
           application/vnd.bancolombia.v2+json:
             schema:
-              $ref: '#/components/schemas/BalanceAndMovementsRequest'
+              $ref: '#/components/schemas/balanceAndMovementsRequest'
 
       responses:
         200:
@@ -45,7 +45,7 @@ paths:
           content:
             application/vnd.bancolombia.v2+json:
               schema:
-                $ref: "#/components/schemas/BalanceAndMovementsResponse"
+                $ref: "#/components/schemas/balanceAndMovementsResponse"
 
         default:
           description: "Mensaje de error por defecto"
@@ -76,7 +76,7 @@ components:
   #################################################################################
   # Scheme BALANCE AND MOVEMENTS REQUEST
   #################################################################################
-    BalanceAndMovementsRequest:
+    balanceAndMovementsRequest:
       type: "object"
       required:
         - data
@@ -87,7 +87,7 @@ components:
           items:
             type: "object"
             required:
-              - RequestInformation
+              - "requestInformation"
             properties:
               categoryRequestInformation:
                 $ref: "#/components/schemas/requestInformation"
@@ -95,7 +95,7 @@ components:
   #################################################################################
   # Scheme BALANCE AND MOVEMENTS RESPONSE
   #################################################################################
-    BalanceAndMovementsResponse:
+    balanceAndMovementsResponse:
       type: object
       required:
         - data
@@ -110,9 +110,9 @@ components:
               - "balanceInformation"
               - "transactionsInformation"
             properties:
-              BalanceInformation:
+              balanceInformation:
                 $ref: "#/components/schemas/balanceInformation"
-              TransactionsInformation:
+              transactionsInformation:
                 $ref: "#/components/schemas/transactionsInformation"
         status:
           $ref: "#/components/schemas/status"
@@ -401,7 +401,7 @@ components:
           description: A human-readable explanation specific to this occurrence of the problem.
           type: string
           example: TRANSACCION EXITOSA
-        Severity:
+        severity:
           description: Servity of error.
           type: string
           example: INFO
